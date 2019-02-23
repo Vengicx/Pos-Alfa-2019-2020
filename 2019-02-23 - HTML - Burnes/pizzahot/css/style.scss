@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+/* Importação de fonte do google */
+$cinza: #f1f1f1;
+$cor1: #ffca57;
+$cor2: #da342e;
+$cor3: #95241f;
+$claro: #fff;
+
+$tam1: 3em;
+$tam2: 2em;
+$tam3: 1.5em;
+$tam4: 1em;
+
+$font1: Montserrat, Tahoma;
+$font2: Tahoma, Verdana;
+/* /\ Declaração de variáveis /\ --- Para funcionar é necessário o Koala estar aberto */
+
+* { /* o * é tudo */
+	margin: 0; /* tira margem de tudo */
+	padding: 0; /* tira margem interna de tudo */
+}
+body {
+	background: $claro;
+	font-size: 14px;
+
+}
+
+h1 {
+	color: $cor3;
+	font: $tam1 $font1;
+}
+
+h2 {
+	color: $cor2;
+	font: $tam2 $font2;
+
+}
+
+p {
+	font: $tam4 $font2;
+}
+
+header{
+	width: 100%;/* tamanho da ocupação na tela*/
+	background: $claro;
+	box-shadow: 0px 5px 10px $cinza;/* coloca sombra*/
+	padding: 20px 0;
+	.header-menu{
+		float: right; /* fica alinhado a direita */
+		margin-top: 25px;
+		ul {
+			list-style: none; /* comando que tira as 'bolinhas'*/
+			li {
+				display: inline; /* deixa um do lado do outro */
+				padding: 35px 10px;/* margem em cima/baixo de 35 e dir/esq de 10 */
+				font: $tam3 $font1;
+				a {
+					color: $cor2;
+					text-decoration: none; /* tirar o sublinhado */
+					font-weight: 900; /* deixar negrito */
+					margin: 10px;
+					&:hover { /* sempre que HOVER o mouse sob o link, vai fazer as configs abaixo */
+						color: $cor3;
+					}
+				}
+			}
+		}
+	}
+}
+
+.container {
+	width: 992px;
+	margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+	----------Glosário-----------
+	- autoplay = começa a música automaticamente
+	- controls = controles para pausar, aumentar volume etc
+	- onclick="playPause()" = ao clicar no botão, vai executar a função "playPause()" no javascript
+	- onchange="funcao()" = é quando muda a posição da barrinha
+	- addEventListener() = ativa quando acontece alguma coisa
+	- timeupdate = é quando o tempo da musica for atualizado
+	- console.log(variavel); = função de mostrar no console do browser o dado de alguma variavel

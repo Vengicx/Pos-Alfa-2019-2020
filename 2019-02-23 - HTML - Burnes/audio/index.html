@@ -1,0 +1,54 @@
+<!DOCTYPE html><!-- preencher html automatico, digite ht + (ctrl) + (espaco) -->
+<html>
+<head>
+	<title>Audio</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Audio</h1>
+	<audio autoplay controls id="musica">
+		<source src="acdc.mp3" type="audio/mp3"><!-- src = local do arquivo de áudio, type = tipo do arquivo-->
+		<p>Navegador não aceita áudio</p><!-- Caso o navegador for antigo apresenta a mensagem -->
+	</audio>
+	<button type="button" onclick="playPause()">Play/Pause</button>
+	<br>
+	<label>Audio</label>
+	<input type="range" id="barra" onchange="mudarAudio()" value="0"><!-- é a barrinha de passar musica pra frente/tras-->
+
+	<label>Volume</label>
+	<input type="range" onchange="mudarVolume()" id="volume" value="100">
+
+	<script type="text/javascript">
+		var musica = document.getElementById("musica"); //pegar o id da música e declarar em uma variavel
+		var barra = document.getElementById("barra"); //pegar o id da barra e declarar em uma variavel
+
+		function playPause(){
+			if (musica.paused) { //se a musica estiver pausada
+				musica.play(); //ela despausa
+
+			}else{ //se não estiver pausada
+				musica.pause(); //ela pausa
+			}
+		}
+
+		function mudarVolume(){
+			var valor = document.getElementById("volume").value //pegar o id do volume e declarar em uma variavel, esse .value no final pega o valor que o id volume já tem
+			valor = valor / 100;
+
+			musica.volume = valor;
+		}
+
+		function mudarAudio(){
+			var tempo = musica.duration * (barra.value / 100) //duration pega a duração em mins e segs, a duração da musica vai dividir a posicao da barra por 100
+			musica.currentTime = tempo;
+		}
+
+		musica.addEventListener("timeupdate", function(){//ativa quando o tempo da musica alterar
+			var valor = ( 100 / musica.duration ) * musica.currentTime;
+			barra.value = valor;
+
+		}); 
+
+	</script>
+</body>
+</html>

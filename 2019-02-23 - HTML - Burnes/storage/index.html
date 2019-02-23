@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>Trabalhando com Local Storage</h1>
+	<input type="text" id="valor">
+	<button type="button" onclick="guardarValor()">Gravar</button>
+	<button type="button" onclick="mostrarValor()">Mostrar</button>
+	<button type="button" onclick="apagar()">Limpar</button>
+
+	<script type="text/javascript">
+		function guardarValor() {
+			var valor = document.getElementById('valor').value;
+			localStorage.setItem("nome", valor); //setItem -> coloca item no localStorage
+
+		}
+
+		function mostrarValor() {
+			valor = localStorage.getItem("nome"); //pega o item que está no localStorage
+			console.log(valor);
+
+		}
+
+		function apagar() {
+			localStorage.clear(); // limpa o localStorage
+			
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
+/* Importação de fonte do google */
+/* /\ Declaração de variáveis /\ --- Para funcionar é necessário o Koala estar aberto */
+* {
+  /* o * é tudo */
+  margin: 0;
+  /* tira margem de tudo */
+  padding: 0;
+  /* tira margem interna de tudo */ }
+
+body {
+  background: #fff;
+  font-size: 14px; }
+
+h1 {
+  color: #95241f;
+  font: 3em Montserrat, Tahoma; }
+
+h2 {
+  color: #da342e;
+  font: 2em Tahoma, Verdana; }
+
+p {
+  font: 1em Tahoma, Verdana; }
+
+header {
+  width: 100%;
+  /* tamanho da ocupação na tela*/
+  background: #fff;
+  box-shadow: 0px 5px 10px #f1f1f1;
+  /* coloca sombra*/
+  padding: 20px 0; }
+  header .header-menu {
+    float: right;
+    /* fica alinhado a direita */
+    margin-top: 25px; }
+    header .header-menu ul {
+      list-style: none;
+      /* comando que tira as 'bolinhas'*/ }
+      header .header-menu ul li {
+        display: inline;
+        /* deixa um do lado do outro */
+        padding: 35px 10px;
+        /* margem em cima/baixo de 35 e dir/esq de 10 */
+        font: 1.5em Montserrat, Tahoma; }
+        header .header-menu ul li a {
+          color: #da342e;
+          text-decoration: none;
+          /* tirar o sublinhado */
+          font-weight: 900;
+          /* deixar negrito */
+          margin: 10px; }
+          header .header-menu ul li a:hover {
+            /* sempre que HOVER o mouse sob o link, vai fazer as configs abaixo */
+            color: #95241f; }
+
+.container {
+  width: 992px;
+  margin: auto; }
+
+/*# sourceMappingURL=style.css.map */
