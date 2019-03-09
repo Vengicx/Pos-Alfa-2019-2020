@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+
+$cinza: #f1f1f1;
+$cor1: #FFCA57;
+$cor2: #DA342E;
+$cor3: #95241F;
+$claro: #FFF;
+
+$tam1: 3em;
+$tam2: 2em;
+$tam3: 1.5em;
+$tam4: 1em;
+
+$font1: Montserrat, Tahoma;
+$font2: Tahoma, Verdana;
+
+@mixin mobile { /* quando o dispositivo for mobile */
+	@media (max-width: 414px){
+		@content; /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+	}
+}
+
+@mixin tablet { /* quando o dispositivo for tablet */
+	@media (min-width: 415px) and (max-width: 800px){
+		@content; /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: $claro;
+	font-size: 14px;
+	overflow-x: hidden;/* não aparecer a barra de rolagem em baixo se houver, se for overflow-y é a barra lateral*/
+
+	@include mobile {
+		font-size: 18px;
+	}
+
+	@include tablet {
+		font-size: 16px;
+	}
+}
+
+h1 {
+	color: $cor3;
+	font: $tam1 $font1;
+}
+
+h2 {
+	color: $cor2;
+	font: $tam2 $font2;
+}
+
+p {
+	font: $tam4 $font2;
+}
+
+header {
+	width: 100%;
+	background: $claro;
+	box-shadow: 0px 0px 30px $cinza;
+	padding: 20px 0;
+	.header {
+		&-logo img {/* a imagem (logo) fica com as seguintes informações */
+			@include mobile {
+				width: 200px;
+			}			
+		}
+		&-menu {
+			float: right;
+
+			@include mobile {
+				display: none;
+				width: 100%;
+				background-color: rgba(255,255,255,0.8); /* ficar transparente */
+				color: $claro;
+				position: absolute; /* posição do elemento*/
+				z-index: 1000; /* posição das camadas */
+				text-shadow: 1px 1px 0 #000; /* sombra do elemento */
+			}
+			ul {
+				list-style: none;
+				padding: 25px 0;
+				li {
+					display: inline;
+
+					@include mobile {
+						display: block; /* deixar os itens um de baixo do outro e não um do lado do outro*/
+						text-align: center; /* alinhar ao meio o texto */  
+						padding: 15px 0;/* margem interna, o primeiro parametro é a margem interna de cima e em baixo
+						e esse 0 é direito e esquerdo, para a margem interna ser 0 (não ter modificacao)*/
+						border-bottom: 1px solid #fff;/* colocar uma "linha" na borda de baixo*/
+
+					}
+
+					font: $tam3 $font1;
+					a {
+						color: $cor2;
+						text-decoration: none;
+						font-weight: 900;
+						margin: 10px;
+						transition: all 0.5s; /* vai demorar meio segundo pra fazer essa ação */
+						&:hover {
+							color: $cor3;
+
+						}
+					}
+				}
+			}
+		}
+		&-button {/* modifica o botão */
+			background: $cor3;
+			color: $claro;
+			font-size: 1.5em; /*serve para multiplicar o tamanho da fonte conforme necessário*/
+			padding: 10px;/* margem interna */
+			border: 0; /*border 0 tira a borda*/
+			float: right; /*alinha a direita*/
+			display: none; /* Não vai aparecer o botão */
+
+			@include mobile {
+				display: block;
+			}
+
+			@include tablet {
+				display: block;
+			}
+		}
+	}
+}
+
+.container {
+	width: 992px;
+	margin: auto;
+	@include mobile {
+		width: 400px;/* ficar com 400px quando for no mobile, motivo: não ter barra de rolagem pro lado*/
+	}
+
+	@include tablet {
+		width: 760px;
+	}
+}
+
+main.container{
+	padding: 30px 0;
+	h1 {
+		font-weight: 900;
+		text-align: center;
+	}
+	h2{
+		margin: 50px;
+		text-align: center;
+	}
+	.btn {
+		background: $cor3;
+		padding: 10px;
+		text-decoration: none;
+		color: $cor2;
+		margin: 50px;
+	}
+	hr {
+		width: 100px;
+		border: 5px solid $cor2;
+		margin: 20px auto;
+	}
+}
+
+footer {
+	background: $cor2;
+	color: $claro;
+	text-align: center;
+	padding: 10px 0;
+	p {
+		margin: 20px;
+
+	}
+	a {
+		color: $cor1;
+		text-decoration: none;/* tirar o sublinhado e outras coisas que aparecem quando é link*/
+		margin: 10px;
+	}
+}
+
+.w-100 {
+	width: 100%;/* vai ocupar 100% da tela (é diferente de 100% da imagem), evitando ter barra de
+	rolagem pra direita*/
+
+}
+
+.row {
+	width: 100%;
+	display: grid; /* transformar em grid */
+	grid-template-columns: auto auto auto;/* vai colocar uma coluna do lado da outra, por estar 2, serão
+	duas colunas por linha */
+
+	@include mobile {
+		grid-template-columns: auto;
+	}
+	@include tablet{
+		grid-template-columns: auto auto;
+	}
+	.col {
+		border: 5px solid #ccc;/* colocar borda colorida */
+		margin: 5px;
+
+		p {
+			margin: 10px;
+			text-align: center;
+			font-size: 2em;
+		}
+		.valor{
+			color: $cor2;
+		}
+	}
+}
+
+.img {
+	box-shadow: 0 0 20px #000;/* colocar sombra */
+	margin: 20px 0;
+	background: #fff;
+	padding: 10px 10px 50px 10px;
+	box-sizing: border-box; /*border-box fala que o padding nao pode aumentar*/
+}

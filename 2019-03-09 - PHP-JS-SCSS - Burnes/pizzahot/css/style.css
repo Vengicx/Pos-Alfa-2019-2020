@@ -1,0 +1,255 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFF;
+  font-size: 14px;
+  overflow-x: hidden;
+  /* não aparecer a barra de rolagem em baixo se houver, se for overflow-y é a barra lateral*/
+  /* quando o dispositivo for mobile */
+  /* quando o dispositivo for tablet */
+}
+@media (max-width: 414px) {
+  body {
+    font-size: 18px;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+@media (min-width: 415px) and (max-width: 800px) {
+  body {
+    font-size: 16px;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+
+h1 {
+  color: #95241F;
+  font: 3em Montserrat, Tahoma;
+}
+
+h2 {
+  color: #DA342E;
+  font: 2em Tahoma, Verdana;
+}
+
+p {
+  font: 1em Tahoma, Verdana;
+}
+
+header {
+  width: 100%;
+  background: #FFF;
+  box-shadow: 0px 0px 30px #f1f1f1;
+  padding: 20px 0;
+}
+header .header-logo img {
+  /* a imagem (logo) fica com as seguintes informações */
+  /* quando o dispositivo for mobile */
+}
+@media (max-width: 414px) {
+  header .header-logo img {
+    width: 200px;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+header .header-menu {
+  float: right;
+  /* quando o dispositivo for mobile */
+}
+@media (max-width: 414px) {
+  header .header-menu {
+    display: none;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* ficar transparente */
+    color: #FFF;
+    position: absolute;
+    /* posição do elemento*/
+    z-index: 1000;
+    /* posição das camadas */
+    text-shadow: 1px 1px 0 #000;
+    /* sombra do elemento */
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+header .header-menu ul {
+  list-style: none;
+  padding: 25px 0;
+}
+header .header-menu ul li {
+  display: inline;
+  /* quando o dispositivo for mobile */
+  font: 1.5em Montserrat, Tahoma;
+}
+@media (max-width: 414px) {
+  header .header-menu ul li {
+    display: block;
+    /* deixar os itens um de baixo do outro e não um do lado do outro*/
+    text-align: center;
+    /* alinhar ao meio o texto */
+    padding: 15px 0;
+                /* margem interna, o primeiro parametro é a margem interna de cima e em baixo
+e esse 0 é direito e esquerdo, para a margem interna ser 0 (não ter modificacao)*/
+    border-bottom: 1px solid #fff;
+    /* colocar uma "linha" na borda de baixo*/
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+header .header-menu ul li a {
+  color: #DA342E;
+  text-decoration: none;
+  font-weight: 900;
+  margin: 10px;
+  transition: all 0.5s;
+  /* vai demorar meio segundo pra fazer essa ação */
+}
+header .header-menu ul li a:hover {
+  color: #95241F;
+}
+header .header-button {
+  /* modifica o botão */
+  background: #95241F;
+  color: #FFF;
+  font-size: 1.5em;
+  /*serve para multiplicar o tamanho da fonte conforme necessário*/
+  padding: 10px;
+  /* margem interna */
+  border: 0;
+  /*border 0 tira a borda*/
+  float: right;
+  /*alinha a direita*/
+  display: none;
+  /* Não vai aparecer o botão */
+  /* quando o dispositivo for mobile */
+  /* quando o dispositivo for tablet */
+}
+@media (max-width: 414px) {
+  header .header-button {
+    display: block;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+@media (min-width: 415px) and (max-width: 800px) {
+  header .header-button {
+    display: block;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+
+.container {
+  width: 992px;
+  margin: auto;
+  /* quando o dispositivo for mobile */
+  /* quando o dispositivo for tablet */
+}
+@media (max-width: 414px) {
+  .container {
+    width: 400px;
+    /* ficar com 400px quando for no mobile, motivo: não ter barra de rolagem pro lado*/
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+@media (min-width: 415px) and (max-width: 800px) {
+  .container {
+    width: 760px;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+
+main.container {
+  padding: 30px 0;
+}
+main.container h1 {
+  font-weight: 900;
+  text-align: center;
+}
+main.container h2 {
+  margin: 50px;
+  text-align: center;
+}
+main.container .btn {
+  background: #95241F;
+  padding: 10px;
+  text-decoration: none;
+  color: #DA342E;
+  margin: 50px;
+}
+main.container hr {
+  width: 100px;
+  border: 5px solid #DA342E;
+  margin: 20px auto;
+}
+
+footer {
+  background: #DA342E;
+  color: #FFF;
+  text-align: center;
+  padding: 10px 0;
+}
+footer p {
+  margin: 20px;
+}
+footer a {
+  color: #FFCA57;
+  text-decoration: none;
+  /* tirar o sublinhado e outras coisas que aparecem quando é link*/
+  margin: 10px;
+}
+
+.w-100 {
+  width: 100%;
+            /* vai ocupar 100% da tela (é diferente de 100% da imagem), evitando ter barra de
+rolagem pra direita*/
+}
+
+.row {
+  width: 100%;
+  display: grid;
+  /* transformar em grid */
+  grid-template-columns: auto auto auto;
+                                      /* vai colocar uma coluna do lado da outra, por estar 2, serão
+duas colunas por linha */
+  /* quando o dispositivo for mobile */
+  /* quando o dispositivo for tablet */
+}
+@media (max-width: 414px) {
+  .row {
+    grid-template-columns: auto;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+@media (min-width: 415px) and (max-width: 800px) {
+  .row {
+    grid-template-columns: auto auto;
+    /* aonde tem @content vai substituir pela classe que vc vai colocar láaa em baixo */
+  }
+}
+.row .col {
+  border: 5px solid #ccc;
+  /* colocar borda colorida */
+  margin: 5px;
+}
+.row .col p {
+  margin: 10px;
+  text-align: center;
+  font-size: 2em;
+}
+.row .col .valor {
+  color: #DA342E;
+}
+
+.img {
+  box-shadow: 0 0 20px #000;
+  /* colocar sombra */
+  margin: 20px 0;
+  background: #fff;
+  padding: 10px 10px 50px 10px;
+  box-sizing: border-box;
+  /*border-box fala que o padding nao pode aumentar*/
+}
+
+/*# sourceMappingURL=style.css.map */
